@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/push_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/push_icon"
+        android:paddingLeft="7dip"
+        android:paddingTop="5dip" >
+
+        <TextView
+            android:id="@+id/push_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="허니고리"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/push_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/push_title"
+            android:maxLines="2"
+            android:text="안녕하세요"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
