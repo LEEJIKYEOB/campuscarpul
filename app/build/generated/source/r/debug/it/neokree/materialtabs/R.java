@@ -361,8 +361,8 @@ public final class R {
 		public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f020030;
 		public static final int abc_textfield_search_default_mtrl_alpha = 0x7f020031;
 		public static final int abc_textfield_search_material = 0x7f020032;
-		public static final int left_arrow = 0x7f020064;
-		public static final int right_arrow = 0x7f020079;
+		public static final int left_arrow = 0x7f020066;
+		public static final int right_arrow = 0x7f02007b;
 	}
 	public static final class id {
 		public static final int action_bar = 0x7f09004d;
@@ -411,7 +411,7 @@ public final class R {
 		public static final int progress_circular = 0x7f090005;
 		public static final int progress_horizontal = 0x7f090006;
 		public static final int radio = 0x7f090047;
-		public static final int reveal = 0x7f09008e;
+		public static final int reveal = 0x7f090091;
 		public static final int right = 0x7f09000a;
 		public static final int search_badge = 0x7f090051;
 		public static final int search_bar = 0x7f090050;
@@ -423,7 +423,7 @@ public final class R {
 		public static final int search_plate = 0x7f090055;
 		public static final int search_src_text = 0x7f090056;
 		public static final int search_voice_btn = 0x7f09005a;
-		public static final int selector = 0x7f090090;
+		public static final int selector = 0x7f090093;
 		public static final int shortcut = 0x7f090046;
 		public static final int showCustom = 0x7f090011;
 		public static final int showHome = 0x7f090012;
@@ -431,7 +431,7 @@ public final class R {
 		public static final int split_action_bar = 0x7f090007;
 		public static final int submit_area = 0x7f090058;
 		public static final int tabMode = 0x7f09000d;
-		public static final int text = 0x7f09008f;
+		public static final int text = 0x7f090092;
 		public static final int title = 0x7f090043;
 		public static final int up = 0x7f090008;
 		public static final int useLogo = 0x7f090014;
@@ -468,11 +468,11 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f030014;
 		public static final int abc_search_view = 0x7f030015;
 		public static final int abc_simple_dropdown_hint = 0x7f030016;
-		public static final int material_tab = 0x7f030021;
-		public static final int material_tab_icon = 0x7f030022;
-		public static final int support_simple_spinner_dropdown_item = 0x7f030027;
-		public static final int tab = 0x7f030028;
-		public static final int tab_icon = 0x7f030029;
+		public static final int material_tab = 0x7f030022;
+		public static final int material_tab_icon = 0x7f030023;
+		public static final int support_simple_spinner_dropdown_item = 0x7f030028;
+		public static final int tab = 0x7f030029;
+		public static final int tab_icon = 0x7f03002a;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f0b0000;
@@ -548,18 +548,18 @@ public final class R {
 		public static final int Base_Theme_AppCompat_Light_Dialog = 0x7f0c0031;
 		public static final int Base_Theme_AppCompat_Light_DialogWhenLarge = 0x7f0c0033;
 		public static final int Base_Theme_AppCompat_Light_Dialog_FixedSize = 0x7f0c0032;
-		public static final int Base_V11_Theme_AppCompat = 0x7f0c00e7;
-		public static final int Base_V11_Theme_AppCompat_Dialog = 0x7f0c00e8;
-		public static final int Base_V11_Theme_AppCompat_Light = 0x7f0c00e9;
-		public static final int Base_V11_Theme_AppCompat_Light_Dialog = 0x7f0c00ea;
-		public static final int Base_V14_Theme_AppCompat = 0x7f0c00eb;
-		public static final int Base_V14_Theme_AppCompat_Dialog = 0x7f0c00ec;
-		public static final int Base_V14_Theme_AppCompat_Light = 0x7f0c00ed;
-		public static final int Base_V14_Theme_AppCompat_Light_Dialog = 0x7f0c00ee;
-		public static final int Base_V21_Theme_AppCompat = 0x7f0c00ef;
-		public static final int Base_V21_Theme_AppCompat_Dialog = 0x7f0c00f0;
-		public static final int Base_V21_Theme_AppCompat_Light = 0x7f0c00f1;
-		public static final int Base_V21_Theme_AppCompat_Light_Dialog = 0x7f0c00f2;
+		public static final int Base_V11_Theme_AppCompat = 0x7f0c00e8;
+		public static final int Base_V11_Theme_AppCompat_Dialog = 0x7f0c00e9;
+		public static final int Base_V11_Theme_AppCompat_Light = 0x7f0c00ea;
+		public static final int Base_V11_Theme_AppCompat_Light_Dialog = 0x7f0c00eb;
+		public static final int Base_V14_Theme_AppCompat = 0x7f0c00ec;
+		public static final int Base_V14_Theme_AppCompat_Dialog = 0x7f0c00ed;
+		public static final int Base_V14_Theme_AppCompat_Light = 0x7f0c00ee;
+		public static final int Base_V14_Theme_AppCompat_Light_Dialog = 0x7f0c00ef;
+		public static final int Base_V21_Theme_AppCompat = 0x7f0c00f0;
+		public static final int Base_V21_Theme_AppCompat_Dialog = 0x7f0c00f1;
+		public static final int Base_V21_Theme_AppCompat_Light = 0x7f0c00f2;
+		public static final int Base_V21_Theme_AppCompat_Light_Dialog = 0x7f0c00f3;
 		public static final int Base_V7_Theme_AppCompat = 0x7f0c0039;
 		public static final int Base_V7_Theme_AppCompat_Dialog = 0x7f0c003a;
 		public static final int Base_V7_Theme_AppCompat_Light = 0x7f0c003b;

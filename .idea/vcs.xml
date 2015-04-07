@@ -8,7 +8,7 @@
     <mapping directory="$PROJECT_DIR$/../MaterialEditText" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../MaterialEditText" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../MaterialEditText" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../blog_samples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
 
