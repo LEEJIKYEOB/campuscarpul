@@ -12,6 +12,9 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="datePickerTheme" parent="@android:style/Widget.Holo.DatePicker">
+        <item name="android:divider">@color/hintcolor</item>
+    </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="windowActionBar">false</item>

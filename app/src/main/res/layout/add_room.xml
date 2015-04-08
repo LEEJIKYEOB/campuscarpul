@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@android:color/black"/>
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker"
+            android:theme="@style/datePickerTheme"
+            android:layout_gravity="center_horizontal"
+            android:calendarViewShown="false"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@android:color/black"/>
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker"
+            android:theme="@style/datePickerTheme"
+            android:layout_gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@android:color/black"/>
+
+        <Spinner
+            android:id="@+id/start_location_spinner"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            ></Spinner>
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@android:color/black"/>
+
+        <Spinner
+            android:id="@+id/end_location_spinner"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_height="wrap_content"></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/black"/>
+
+        <LinearLayout
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:weightSum="4"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/max_people_1_btn"
+                android:layout_width="0px"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/max_people_2_btn"
+                android:layout_width="0px"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/max_people_3_btn"
+                android:layout_width="0px"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/max_people_4_btn"
+                android:layout_width="0px"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:orientation="horizontal"
+        ></LinearLayout>
+
+</LinearLayout>
