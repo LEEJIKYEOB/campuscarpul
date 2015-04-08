@@ -2,235 +2,235 @@
 <items version="2" >
 
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-b38dd6cb36c2b32291f834fc531c06a76a157798.jar" />
-    </item>
-    <item
-        jar="C:\Users\LEE\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\library-2.4.0-2a33032e22be37484c094b898df4f593e5c94a60.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-50ea3e130a4d1007f046ba30a0cf252109f60d91.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-9070396259673c87cb2e329783ae59217d04e528.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\libs\gcm.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a6d7bce795a14c7f86111756c4ceb44b79de14aa">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\gcm-0a6ec7b9edcce17853b3f9b753fa2b0a2d82bf69.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-d8209584b74aa53df9b4ea33cbf5897631a99fdf.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-140792ab4fa88e2f007e8c4b0ea128bc190beda5.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-f08f5ada24b4b6cebcc69879a5bf5a4902e1cc8c.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-dc128114770c243d0899abb132ec4bf67ca4b215.jar" />
-    </item>
-    <item
-        jar="C:\Users\LEE\android-sdks\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-bc1e29265e175b7c9b196f7bf1a571732a714489.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-3737eb3ca5f4f662e07a965d603b4fdd6cd2957b.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-b5527f34e5711785193dcd69f23c6d6524db287d.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-ff406826dc95a8d3c9d699c34a9d2e2c8b83779a.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-e6313a660b4383f3a316085022727561fb58f9f5.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-3fa9329bce4aef5cfe69f186bc4de6a7fa178780.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-f9734176419b863686b4a4794e2a8d605a37adad.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\me.drakeet.materialdialog\library\1.2.2\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8646b1e69dd5d923d8866dc4311859f0fbca456c">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-fcd293cdeebe82c302a3f03c96437a0a3f404466.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.github.markushi\android-ui\1.2\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="96436aef5f48b09aca1e0183dfcd7782aa580bd6">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-da8e95967baeb4950d49527cec3a46030548dd60.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-11658aed51e3a2f4a3ae283cc555db3474022368.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.0.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="055783146ba9654a725442563be78cad303aad1f">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-fa62db16c6fc23092fcc02b5c7c932a3cfbc715e.jar" />
-    </item>
-    <item
-        jar="C:\Git\campuscarpul\app\libs\android-query-full.0.24.3.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\libs\android-query-full.0.24.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="bd4b958b6817244d4e6f74ce5f4dbd8001974b77">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\android-query-full.0.24.3-6a7c44aa5ff493a4e1051d6ab098879b1829303b.jar" />
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\android-query-full.0.24.3-d326201b4721542ee3d43e3956c266d47450507b.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="87405405e403de68f4057757b8a2e8de02bd65d0">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-cd013e27d58a74bf0c5fda050ff459ae77da93d5.jar" />
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-5fcbe084415df79e35cd868d7fe13f6ebffe21ef.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.0.0\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\campuscarpul2\MaterialTabsModule\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-a04afe53481d303d1d8b5d622b8ac07ac16fda31.jar" />
+        sha1="6e070e9372a4c25b6ac4d4f7bf3d32c0ecb1f769">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-3534249668e3aba901bc46746c158d3a95b841d6.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\libs\gcm-server.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-a816f473047b9a6247ebce14f4a14a79c35fe603.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\libs\gcm-server.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="a598197ed7192e3f67b00168c55b3f22c8e3435e">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\gcm-server-14f2ba633f1e56efea542b11c645c89546e2a8de.jar" />
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\gcm-server-9ee83e8927b30354a4f2581811098c9e7a30e6b3.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\campuscarpul\MaterialTabsModule\unspecified\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="94419ad5f42d1bc1314f8b3114cd6f37e8fd34e6">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-eba3f8e1703c5a62482430e6152452521b4f0953.jar" />
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-51e1810a242188817d2cd7afe1ac2a2d940ae42b.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.0.0\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-7c048e55d882b7be3e6fad689158276820610e79.jar" />
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-31da780b6686082623245fedf7ae26508ed24f48.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.0.0\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.github.markushi\android-ui\1.2\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-23afb882645cfb8d262df3d3709219517411d496.jar" />
+        sha1="96436aef5f48b09aca1e0183dfcd7782aa580bd6">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-7f33031cb790497632b300b5e0961056bfba00cc.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.rengwuxian.materialedittext\library\2.0.3\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="052802ed198178e7133de387fbc87d3f2998482a">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-7558586cca4b0849ca36268b9a728aa9f77d42e1.jar" />
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-cf6a6268f14233d3663729c38b21a3e26fa5ffa5.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.0.0\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="87405405e403de68f4057757b8a2e8de02bd65d0">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-ddd67ac94d3caa17105be870c2fcbb1ecda51af0.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-28cd5abe2ee4070815c0afd9f0780782a33287e8.jar" />
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-c7f313e2334b99aa40119466c3e1bc9cb8bf7a19.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.0.0\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-a2d8ec64aa49cdb0671b638edfc0b4fe3a589af4.jar" />
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-d0d6495091576a2e1032f9f0e249239b68a69c12.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.0.0\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\me.drakeet.materialdialog\library\1.2.2\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-f859103c543c31536418dd5c0c6c14baacd055ea.jar" />
+        sha1="8646b1e69dd5d923d8866dc4311859f0fbca456c">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-42a106929bb6dec283decb85b79ccf4e1d4459f2.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\libs\json-simple-1.1.1.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-ee07dfea00ccf207d50961494ccba6ceee59daa1.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-a604420379583d27b86f2c9e0c59bc765d07156f.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-9d8c466f487972babfe23290d6e40dacb4d53bd4.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-949f175c32d621c8500bd8b60247eb7ba742da5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-b74fee1bcea9dba1381e9beb93d350240a4b0e19.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\libs\json-simple-1.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\json-simple-1.1.1-20eeaed302720e6099a09e203866131acc625c38.jar" />
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\json-simple-1.1.1-c2b578a0caa1e8ee8a7fb0b3444527bf2c22fe8d.jar" />
     </item>
     <item
-        jar="C:\Git\campuscarpul\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.0.0\classes.jar"
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
-        <dex dex="C:\Git\campuscarpul\app\build\intermediates\pre-dexed\debug\classes-5231257379393c251e37d9d69c85ed613839d9f9.jar" />
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-bea6e843abac937a974eb629f604af7a3572bd25.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-1e42700c3a031ad77892adf85c576eff95f79eea.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-badde265418147958d9f0f7fb28e358203edf7b3.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-0876ee440fac19bf651ef362cef799381f91ffa3.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-1adf848cfd97a778abf417835eb51ccf7cbdf99f.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-3724d1c03beb7f726295b8f81ebb71c229813e00.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-6038bc725b858a2cc9f176b9726a9bd128a6ad5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.rengwuxian.materialedittext\library\2.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="052802ed198178e7133de387fbc87d3f2998482a">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-a54db2b7d1cac986f422e9b591567c7204ef9dfa.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\libs\gcm.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a6d7bce795a14c7f86111756c4ceb44b79de14aa">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\gcm-858290f25dee36cccf12e561f0d9b9f0e7161f79.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-ab345d3b5c0f85a629e233b5707e567a27cf6c3a.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-3b2b426ac5ffe28b5e02ec0e32c7fd8cbedf404b.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-34a94440b66c50b617dd6dd774c63d57661923fa.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\library-2.4.0-d2894854d97629e64097b288a3b137d3731dce86.jar" />
+    </item>
+    <item
+        jar="C:\Users\j\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-02046eeb78e05bad74e312844d5e87735bfe5bad.jar" />
     </item>
 
 </items>

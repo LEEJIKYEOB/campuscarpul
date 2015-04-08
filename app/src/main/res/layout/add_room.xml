@@ -1,0 +1,187 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/lightblue_500"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="16dp"
+            android:scaleType="center"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_day"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="center"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_time"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="center"
+            android:layout_marginRight="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_loc"/>
+
+        <Spinner
+            android:id="@+id/start_location_spinner"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            style="@style/AppTheme.Spinner"
+            ></Spinner>
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="center"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_next"/>
+
+        <Spinner
+            android:id="@+id/end_location_spinner"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            style="@style/AppTheme.Spinner"
+            android:visibility="gone"
+            android:layout_height="wrap_content"></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="center"
+            android:layout_gravity="center"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_people"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/max_people_1_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/max_people_2_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/max_people_3_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/max_people_4_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/hintcolor"
+                android:text="1"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="center"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_carnum_b"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/join01_email_et"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:met_errorColor="@color/red_300"
+            android:hint="차량번호"
+            android:textCursorDrawable="@drawable/text_cursor_cyan"
+            app:met_baseColor="#000000"
+            app:met_textColor="@android:color/black"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="10"
+            app:met_bottomTextSize="0sp"
+            app:met_floatingLabelTextSize="14sp"
+            app:met_primaryColor="@color/lightblue_500"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

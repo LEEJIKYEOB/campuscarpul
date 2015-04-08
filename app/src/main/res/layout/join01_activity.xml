@@ -76,7 +76,7 @@
                             app:met_maxCharacters="20"
                             app:met_bottomTextSize="0sp"
                             app:met_floatingLabelTextSize="0sp"
-                            app:met_iconLeft="@drawable/email"
+                            app:met_iconLeft="@drawable/ic_email"
                             android:inputType="textEmailAddress"
                             app:met_primaryColor="@color/lightblue_500"
                             app:met_singleLineEllipsis="true"
@@ -107,7 +107,7 @@
                         app:met_maxCharacters="14"
                         app:met_bottomTextSize="0sp"
                         app:met_floatingLabelTextSize="0sp"
-                        app:met_iconLeft="@drawable/pwcheck"
+                        app:met_iconLeft="@drawable/ic_pw"
                         android:inputType="textPassword"
                         app:met_primaryColor="@color/lightblue_500"
                         app:met_singleLineEllipsis="true" />
@@ -154,7 +154,7 @@
                         app:met_textColor="@android:color/black"
                         app:met_floatingLabel="highlight"
                         app:met_maxCharacters="6"
-                        app:met_iconLeft="@drawable/name"
+                        app:met_iconLeft="@drawable/ic_nametag"
                         android:inputType="text"
                         app:met_primaryColor="@color/lightblue_500"
                         app:met_singleLineEllipsis="true" />
@@ -271,7 +271,7 @@
                             app:met_textColor="@android:color/black"
                             app:met_floatingLabel="highlight"
                             app:met_maxCharacters="11"
-                            app:met_iconLeft="@drawable/phonecheck"
+                            app:met_iconLeft="@drawable/ic_phonecheck"
                             android:inputType="phone"
                             app:met_primaryColor="@color/lightblue_500"
                             app:met_singleLineEllipsis="true" />

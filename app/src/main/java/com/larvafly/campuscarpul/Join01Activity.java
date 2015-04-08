@@ -51,7 +51,7 @@ import android.widget.Toast;
 
 public class Join01Activity extends ActionBarActivity implements OnClickListener, OnHttpReceiveListener{
 
-	public static Activity Act;
+	public static Join01Activity Act;
 
 	protected static final ColorStateList RED = null;
 
@@ -86,15 +86,16 @@ public class Join01Activity extends ActionBarActivity implements OnClickListener
 	private ButtonFlat phone_send_bt;
 	private ButtonFlat phone_check_bt;
 
+    public String img_src = null;
 
 	private RelativeLayout sex_man;
 	private RelativeLayout sex_woman;
 	private Button sex_man_btn;
 	private Button sex_woman_btn;
 
-	private ImageView imageView;
+	public ImageView imageView;
 	private Img_bitmap img_bitmap;
-	private Uri imageUri;
+	public Uri imageUri;
 
 
 	private ButtonRectangle next_btn;
@@ -506,8 +507,6 @@ public class Join01Activity extends ActionBarActivity implements OnClickListener
 			JOIN_HTTP join_HTTP = new JOIN_HTTP(handler, userProfile_bean, HTTP_Handler.HTTP_RECEIVE_JOIN);
 			join_HTTP.start();
 			
-			
-			
 
 			break;
 			
@@ -523,12 +522,9 @@ public class Join01Activity extends ActionBarActivity implements OnClickListener
 
 			}
 
-
 		default:
 			break;
 		}
-
-
 
 
 	}
@@ -572,15 +568,23 @@ public class Join01Activity extends ActionBarActivity implements OnClickListener
 		id = id_et.getEditableText().toString();
 		pw = pw_et.getEditableText().toString();
 		
-		
-		
-		
-		FILE_UPLOAD_HTTP upload_HTTP = new FILE_UPLOAD_HTTP(handler, getFilesDir().getPath()+"profile.jpg", FILE_UPLOAD_HTTP.PROFILE, HTTP_Handler.HTTP_RECEIVE_FILEUPLOAD);
-		upload_HTTP.start();
+		if (img_src != null) {
+            FILE_UPLOAD_HTTP upload_HTTP = new FILE_UPLOAD_HTTP(handler, img_src, FILE_UPLOAD_HTTP.PROFILE, HTTP_Handler.HTTP_RECEIVE_FILEUPLOAD);
+            upload_HTTP.start();
+        }else{
 
 
+            userProfile_bean.setName(name);
+            userProfile_bean.setPhone_number(phone);
+            userProfile_bean.setSex(sex);
+            userProfile_bean.setUser_id(id);
+            userProfile_bean.setUser_pw(pw);
+            userProfile_bean.setDevicekey(Static_date.devicekey);
+            userProfile_bean.setProfileimage_idx(-1);
 
-
+            JOIN_HTTP join_HTTP = new JOIN_HTTP(handler, userProfile_bean, HTTP_Handler.HTTP_RECEIVE_JOIN);
+            join_HTTP.start();
+        }
 
 	}
 
@@ -604,9 +608,15 @@ public class Join01Activity extends ActionBarActivity implements OnClickListener
 				AssetFileDescriptor afd;
 				try {
 
+                    Log.d("test", "imageUri = " + imageUri.getPath());
+
 					afd = getContentResolver().openAssetFileDescriptor(imageUri, "r");
 
-					Bitmap bitmap = img_bitmap.getPhotoBitmapOfOptions(imageUri);
+                    String s = "";
+
+					Bitmap bitmap = img_bitmap.getPhotoBitmapOfOptions(imageUri,s);
+
+                    img_src = s;
 
 					imageView.setImageBitmap(bitmap);
 
@@ -631,7 +641,11 @@ public class Join01Activity extends ActionBarActivity implements OnClickListener
 					try {
 						afd = getContentResolver().openAssetFileDescriptor(img_url1, "r");
 
-						Bitmap bitmap = img_bitmap.getGallaryBitmapOfOptions(afd,data);
+                        String s = "";
+
+						Bitmap bitmap = img_bitmap.getGallaryBitmapOfOptions(afd,data,s);
+
+                        img_src =s;
 
 						imageView.setImageBitmap(bitmap);
 

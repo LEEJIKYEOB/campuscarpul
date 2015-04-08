@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.larvafly.campuscarpul.Join01Activity;
 import com.larvafly.campuscarpul.Join02Activity;
 import com.larvafly.campuscarpul.R;
 
@@ -49,10 +50,11 @@ public class Img_bitmap {
 
 	private Uri imageUri;
 	private String imageUri_path;
+
 	
-	private Activity activity;
+	private Join01Activity activity;
 	
-	public Img_bitmap(final Activity activity) {
+	public Img_bitmap(final Join01Activity activity) {
 		// TODO Auto-generated constructor stub
 		
 		
@@ -113,9 +115,11 @@ public class Img_bitmap {
 	}
 
 	int IMAGE_MAX_SIZE = 500;
-	public Bitmap getPhotoBitmapOfOptions(Uri imageUri){
+	public Bitmap getPhotoBitmapOfOptions(Uri imageUri,String s){
 		
 		String fileName = imageUri.getPath();
+
+        Log.d("test","fileName = "+fileName);
 
 		//Decode image size
 		BitmapFactory.Options options = new BitmapFactory.Options();
@@ -127,18 +131,24 @@ public class Img_bitmap {
 			scale = (int)Math.pow(2, (int) Math.round(Math.log(IMAGE_MAX_SIZE / 
 					(double) Math.max(options.outHeight, options.outWidth)) / Math.log(0.5)));     
 		}
-		
+
+        BitmapFactory.Options options2 = new BitmapFactory.Options();
+
 		Bitmap image=null;
 		if(scale == 1){
-			options.inSampleSize = 1;
+            options2.inSampleSize = 1;
 			//image = BitmapFactory.decodeFile(imagePath, options);
-		}else{		
-			options.inSampleSize = (int)(scale/2);
+		}else{
+            options2.inSampleSize = (int)(scale/2);
 			//image = BitmapFactory.decodeFile(imagePath, options);
 			//image = Bitmap.createScaledBitmap(image, 500, 500, true);
 		}
 
-		image = BitmapFactory.decodeFile(fileName, options);
+		image = BitmapFactory.decodeFile(fileName, options2);
+
+        saveBitmaptoJpeg(image);
+
+        s = Environment.getExternalStorageDirectory()+"cc_temp_profileimg.jpg";
 
 		// 이미지를 상황에 맞게 회전시킨다
 		ExifInterface exif = null;
@@ -157,7 +167,7 @@ public class Img_bitmap {
 		return img_src;
 	}
 
-	public Bitmap getGallaryBitmapOfOptions(AssetFileDescriptor afd,Intent data){
+	public Bitmap getGallaryBitmapOfOptions(AssetFileDescriptor afd,Intent data,String s){
 
 		//Decode image size
 		BitmapFactory.Options options = new BitmapFactory.Options();
@@ -186,7 +196,9 @@ public class Img_bitmap {
 
 		image = BitmapFactory.decodeFileDescriptor(afd.getFileDescriptor(),null, options2);
 
-		saveBitmaptoJpeg(image,activity.getFilesDir().getPath(),"profile");
+		saveBitmaptoJpeg(image);
+
+        s = activity.getFilesDir().getPath()+"cc_temp_profileimg.jpg";
 		
 		// 이미지를 상황에 맞게 회전시킨다
 		Uri imageUri = data.getData();
@@ -211,6 +223,7 @@ public class Img_bitmap {
 
 	public void showimgdialog() {
 		// TODO Auto-generated method stub
+
 
 //        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
 //        imm.toggleSoftInput(
@@ -260,6 +273,7 @@ public class Img_bitmap {
                         break;
                     case 1:
 
+
                         File photo = new File(Environment.getExternalStorageDirectory(), "cc_temp_profileimg.jpg");
 
                         Log.d("test", "photo = " + photo.getPath());
@@ -267,6 +281,10 @@ public class Img_bitmap {
                         imageUri_path = photo.getPath();
 
                         imageUri = Uri.fromFile(photo);
+
+                        activity.imageUri = imageUri;
+
+                        activity.img_src = Environment.getExternalStorageDirectory()+"cc_temp_profileimg.jpg";
 
                         // 카메라를 호출합니다.
                         Intent i = new Intent("android.media.action.IMAGE_CAPTURE");
@@ -281,6 +299,8 @@ public class Img_bitmap {
 //					user_Info_bean.setPhoto(img_select, null);
 //					imageView[img_select].setImageBitmap(null);
 
+                        activity.imageView.setImageBitmap(null);
+                        activity.img_src = null;
                         mMaterialDialog.dismiss();
 
 
@@ -323,14 +343,10 @@ public class Img_bitmap {
 	}
 
 
-	public static void saveBitmaptoJpeg(Bitmap bitmap,String folder, String name){
-		String file_name = name+".jpg";
+	public void saveBitmaptoJpeg(Bitmap bitmap){
 		try{
 
-			FileOutputStream out = new FileOutputStream(folder+file_name);
-
-			Log.d("test", "IMG file name = "+folder+file_name);
-
+			FileOutputStream out = new FileOutputStream(activity.getFilesDir().getPath()+"cc_temp_profileimg.jpg");
 			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
 			out.close();
 
