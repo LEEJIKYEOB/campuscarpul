@@ -25,12 +25,12 @@ public final class R {
 		public static final int material_dialog_window = 0x7f020070;
 	}
 	public static final class id {
-		public static final int buttonLayout = 0x7f090084;
-		public static final int contentView = 0x7f090082;
-		public static final int empty_view = 0x7f090085;
-		public static final int material_background = 0x7f090081;
-		public static final int message = 0x7f090066;
-		public static final int message_content_view = 0x7f090083;
+		public static final int buttonLayout = 0x7f09008a;
+		public static final int contentView = 0x7f090088;
+		public static final int empty_view = 0x7f09008b;
+		public static final int material_background = 0x7f090087;
+		public static final int message = 0x7f09006c;
+		public static final int message_content_view = 0x7f090089;
 		public static final int title = 0x7f090043;
 	}
 	public static final class layout {

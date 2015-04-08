@@ -411,7 +411,7 @@ public final class R {
 		public static final int progress_circular = 0x7f090005;
 		public static final int progress_horizontal = 0x7f090006;
 		public static final int radio = 0x7f090047;
-		public static final int reveal = 0x7f090091;
+		public static final int reveal = 0x7f090097;
 		public static final int right = 0x7f09000a;
 		public static final int search_badge = 0x7f090051;
 		public static final int search_bar = 0x7f090050;
@@ -423,7 +423,7 @@ public final class R {
 		public static final int search_plate = 0x7f090055;
 		public static final int search_src_text = 0x7f090056;
 		public static final int search_voice_btn = 0x7f09005a;
-		public static final int selector = 0x7f090093;
+		public static final int selector = 0x7f090099;
 		public static final int shortcut = 0x7f090046;
 		public static final int showCustom = 0x7f090011;
 		public static final int showHome = 0x7f090012;
@@ -431,7 +431,7 @@ public final class R {
 		public static final int split_action_bar = 0x7f090007;
 		public static final int submit_area = 0x7f090058;
 		public static final int tabMode = 0x7f09000d;
-		public static final int text = 0x7f090092;
+		public static final int text = 0x7f090098;
 		public static final int title = 0x7f090043;
 		public static final int up = 0x7f090008;
 		public static final int useLogo = 0x7f090014;
