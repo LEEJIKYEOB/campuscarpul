@@ -1,13 +1,14 @@
 package com.larvafly.campuscarpul;
 
 
-import com.gc.materialdesign.views.ButtonFloat;
 import com.larvafly.adapter.MainViewPagerAdapter;
+import com.larvafly.lib.Static_date;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -17,8 +18,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
@@ -26,13 +30,12 @@ import it.neokree.materialtabs.MaterialTabListener;
 
 
 @SuppressLint("DefaultLocale")
-public class MainActivity extends ActionBarActivity implements MaterialTabListener, OnClickListener {
+public class MainActivity extends ActionBarActivity implements MaterialTabListener {
     MaterialTabHost tabHost;
     ViewPager pager;
     MainViewPagerAdapter adapter;
     ActionBarDrawerToggle dtToggle;
     DrawerLayout dlDrawer;
-    ButtonFloat add_Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +45,6 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
         Toolbar toolbar = (android.support.v7.widget.Toolbar) this.findViewById(R.id.toolbar);
         dlDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         this.setSupportActionBar(toolbar);
-
-        add_Button = (ButtonFloat)findViewById(R.id.main_room_add);
-        add_Button.setOnClickListener(this);
 
         dtToggle = new ActionBarDrawerToggle(this, dlDrawer, R.string.app_name, R.string.app_name);
         dlDrawer.setDrawerListener(dtToggle);
@@ -121,21 +121,4 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
     }
 
 
-    @Override
-    public void onClick(View view) {
-
-        switch (view.getId()){
-            case R.id.main_room_add:
-
-
-                Intent intent = new Intent(this,Add_room.class);
-                startActivity(intent);
-
-                break;
-            default:
-
-                break;
-        }
-
-    }
 }
