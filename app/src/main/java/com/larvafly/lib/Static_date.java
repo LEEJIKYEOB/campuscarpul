@@ -14,12 +14,12 @@ import com.google.android.gcm.GCMRegistrar;
 
 public class Static_date {
 
-	public static int my_user_idx;
+	public static int my_user_idx = 1;
 	public static int my_state;
 	public static Typeface myfont;
 	public static Typeface myfont_bold;
-	
-	
+
+
 	public static final String APPKEY = "AIzaSyCeGGyv778u5rOpV3KqGWAfAe0dUpx4qIQ";
 	public static final String SERVERKEY = "AIzaSyA8cJALJaGBTU8VeU4uCUjEohAtmO9xLO0";
 	public static final String PROJECTNUMBER = "399829914471";
@@ -28,16 +28,16 @@ public class Static_date {
 	public static String myimg;
 	public static String mynickname;
 
-	
-	
-	
 
-	public static Typeface ApplyFonts(Context ct) {       
-		Typeface face = Typeface.createFromAsset(ct.getAssets(), "fonts/NANUMBARUNGOTHIC.mp3"); 
+
+
+
+	public static Typeface ApplyFonts(Context ct) {
+		Typeface face = Typeface.createFromAsset(ct.getAssets(), "fonts/NANUMBARUNGOTHIC.mp3");
 		return face;
 	}
-	public static Typeface ApplyFonts_bold(Context ct) {       
-		Typeface face = Typeface.createFromAsset(ct.getAssets(), "fonts/NANUMBARUNGOTHICBOLD.mp3"); 
+	public static Typeface ApplyFonts_bold(Context ct) {
+		Typeface face = Typeface.createFromAsset(ct.getAssets(), "fonts/NANUMBARUNGOTHICBOLD.mp3");
 		return face;
 	}
 
@@ -80,7 +80,7 @@ public class Static_date {
 			a += 1900;
 		}else {
 			a += 2000;
-		} 
+		}
 		int t = (y-a)+1;
 
 		//		System.out.println("나이 = " + t);
@@ -113,16 +113,16 @@ public class Static_date {
 		return regId;
 
 	}
-	
+
 	public static void saveLoginSharedPreferences(Context context, String id, String pass) {
 
 		SharedPreferences pref = context.getSharedPreferences("HG_LOGIN",context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = pref.edit();
 
 		editor.putString("ID", id);
-		editor.putString("PW", pass);			
+		editor.putString("PW", pass);
 		editor.commit();
 
 	}
-	
+
 }

@@ -20,22 +20,22 @@ import android.view.ViewGroup;
 @SuppressLint("DefaultLocale")
 public class MainViewPagerAdapter extends FragmentPagerAdapter{
 
-	
+
 	private Activity activity;
-	
+
 	private Meching_Fragment daeyeon;
 	private Meching_Fragment gyeongseong;
 	private Meching_Fragment dongmyeong;
-	
-	
+
+
 	public MainViewPagerAdapter(Activity activity,FragmentManager mFragmentManager){
 		super(mFragmentManager);
 		this.activity = activity;
-		
-		daeyeon = new Meching_Fragment(activity);
-		gyeongseong = new Meching_Fragment(activity);
-		dongmyeong = new Meching_Fragment(activity);
-		
+
+		daeyeon = new Meching_Fragment(activity,1);
+		gyeongseong = new Meching_Fragment(activity,2);
+		dongmyeong = new Meching_Fragment(activity,3);
+
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter{
 	@Override
 	public Fragment getItem(int index) {
 		// TODO Auto-generated method stub
-		
+
 		if(index == 0){
 			return daeyeon;
 		}else if(index == 1){
@@ -54,8 +54,8 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter{
 		}else if(index == 2){
 			return dongmyeong;
 		}
-		
-		
+
+
 		return null;
 	}
 

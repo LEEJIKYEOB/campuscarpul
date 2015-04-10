@@ -1,9 +1,11 @@
 package com.larvafly.campuscarpul;
 
 
+import com.gc.materialdesign.views.ButtonFloat;
 import com.larvafly.adapter.MainViewPagerAdapter;
 import com.larvafly.lib.Static_date;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
@@ -36,11 +38,23 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
     MainViewPagerAdapter adapter;
     ActionBarDrawerToggle dtToggle;
     DrawerLayout dlDrawer;
+    ButtonFloat buttonFloat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+
+        buttonFloat = (ButtonFloat)findViewById(R.id.main_room_add);
+        buttonFloat.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this ,Add_room.class);
+                startActivity(intent);
+
+            }
+        });
 
         Toolbar toolbar = (android.support.v7.widget.Toolbar) this.findViewById(R.id.toolbar);
         dlDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -74,6 +88,12 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 
         }
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        chat_fragment_refresh();
     }
 
 
@@ -120,5 +140,13 @@ public class MainActivity extends ActionBarActivity implements MaterialTabListen
 
     }
 
+    public void chat_fragment_refresh(){
+
+
+        for (int i = 0 ; i < adapter.getCount();i++) {
+            Meching_Fragment meching_fragment = (Meching_Fragment) adapter.getItem(i);
+            meching_fragment.refresh();
+        }
+    }
 
 }

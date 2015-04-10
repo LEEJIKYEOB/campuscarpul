@@ -25,17 +25,25 @@ public class HTTP_Handler extends Handler{
 
 	public final static int HTTP_RECEIVE_FALSE = -1;
 	public final static int HTTP_RECEIVE_TRUE = 0;
-	
+
 	public static final int HTTP_RECEIVE_LOGIN = 1001;
 	public static final int HTTP_RECEIVE_JOIN_IDCHECK = 1002;
 	public static final int HTTP_RECEIVE_JOIN = 1003;
 	public static final int HTTP_RECEIVE_FILEUPLOAD = 1004;
+    public static final int HTTP_RECEIVE_ADD_ROOM= 1005;
+    public static final int HTTP_RECEIVE_GET_ROOM= 1006;
 
 	/////////////////////////////////////////////////////// ERO CODE
-	
+
 	public static final int HTTP_RECEIVE_ERO_NICK_NO_CHECK = -1;
-	
-	
+
+    //    $error_code_20001 = 20001; //참가하려는대 이미 참가한사람일떄
+    public static final int HTTP_RECEIVE_ERROR_CODE_20001 = 20001;
+
+    //    $error_code_20002 = 20002; //이유모름
+    public static final int HTTP_RECEIVE_ERROR_CODE_20002 = 20002;
+
+
 	////////////////////////////////////////////////////////////////
 
 	public HTTP_Handler(OnHttpReceiveListener onHttpReceiveListener,Context context) {
@@ -75,7 +83,10 @@ public class HTTP_Handler extends Handler{
 	@Override
 	public void handleMessage(Message msg) {
 		// TODO Auto-generated method stub
+
+        Log.d("test","message.obj = " + msg.obj);
 		super.handleMessage(msg);
+        Log.d("test","message.obj = " + msg.obj);
 
 		downusetherad();
 
@@ -84,8 +95,10 @@ public class HTTP_Handler extends Handler{
 		}
 
 
-		if (!(msg.arg1 == HTTP_RECEIVE_FALSE)){ 
+		if (!(msg.arg1 == HTTP_RECEIVE_FALSE)){
 			msg.arg1 = resultcode;
+
+            Log.d("test","message.obj = " + msg.obj);
 			onHttpReceiveListener.Http_Receive(msg);
 		}else{
 			onHttpReceiveListener.Http_Receive(msg);
@@ -113,8 +126,8 @@ public class HTTP_Handler extends Handler{
 		dialog.cancel();
 
 	}
-	
-	
+
+
 
 	public Context getContext() {
 		return context;

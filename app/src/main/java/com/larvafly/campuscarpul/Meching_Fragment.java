@@ -29,25 +29,31 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.google.android.gms.games.multiplayer.realtime.Room;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.larvafly.adapter.Meching_Adapter;
-import com.larvafly.bean.Meching_bean;
+import com.larvafly.bean.Room_bean;
+import com.larvafly.http.GET_ROOM_HTTP;
 import com.larvafly.http.HTTP_Handler.*;
 import com.larvafly.http.HTTP_Handler;
 import com.larvafly.lib.Android_Size;
 
 @SuppressLint("ValidFragment")
-public class Meching_Fragment extends Fragment implements OnHttpReceiveListener {
+public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,PullToRefreshBase.OnRefreshListener {
 
-	private Activity activity;
-    private ListView main_listview;
+    private Activity activity;
+    private PullToRefreshListView main_listview;
     private Meching_Adapter mAdapter;
     private HTTP_Handler http_Handler;
-    private ArrayList<Meching_bean> arrItem;
+    private ArrayList<Room_bean> arrItem;
     private LinearLayout linearLayout;
+    private int start_loc;
 
-    public Meching_Fragment(Activity activity) {
+    public Meching_Fragment(Activity activity,int start_loc) {
 
         this.activity = activity;
+        this.start_loc =start_loc;
 
         http_Handler = new HTTP_Handler(this, activity);
 
@@ -55,80 +61,114 @@ public class Meching_Fragment extends Fragment implements OnHttpReceiveListener 
 
 
     @Override
-	public View onCreateView(LayoutInflater inflater, 
-			ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_meching, null);
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_meching, null);
 
 
-		main_listview = (ListView)view.findViewById(R.id.meching_lv);
+        main_listview = (PullToRefreshListView)view.findViewById(R.id.meching_lv);
 
-		//		linearLayout = (LinearLayout)view.findViewById(R.id.Main_ScrollView_LinearLayout);
+        //		linearLayout = (LinearLayout)view.findViewById(R.id.Main_ScrollView_LinearLayout);
+
+        arrItem = new ArrayList<>();
+
+
+//        GET_ROOM_HTTP get_room_http = new GET_ROOM_HTTP(http_Handler,start_loc,HTTP_Handler.HTTP_RECEIVE_GET_ROOM);
+//        get_room_http.setShowdialog(false);
+//        get_room_http.start();
 
 //		MAIN_GET_CARD_INFO_HTTP card_1 = new MAIN_GET_CARD_INFO_HTTP(http_Handler, Static_date.my_user_idx, HTTP_Handler.HTTP_RECEIVE_MAIN_GET_CARD);
 //		card_1.start();
 
-		return view;
-	}
-	
-	public void main_fragment_refresh(){
+        init_cardlist();
+
+        return view;
+    }
+
+    public void main_fragment_refresh(){
 
 //		MAIN_GET_CARD_INFO_HTTP card_1 = new MAIN_GET_CARD_INFO_HTTP(http_Handler, Static_date.my_user_idx, HTTP_Handler.HTTP_RECEIVE_MAIN_GET_CARD);
 //		card_1.setShowdialog(false);
 //		card_1.start();
 
-	}
+    }
 
 
-	void init_cardlist()
-	{    	
-
-		mAdapter = new Meching_Adapter(activity, arrItem,http_Handler);
+    void init_cardlist()
+    {
 
 
-		Android_Size size = new Android_Size(activity);
-
-		//		linearLayout.setLayoutParams(new LinearLayout.LayoutParams (LinearLayout.LayoutParams.MATCH_PARENT, size.gethight_1(105)));
-
-		main_listview.setLayoutParams(new LinearLayout.LayoutParams (LinearLayout.LayoutParams.MATCH_PARENT, size.gethight_1(130))); 
-		main_listview.setAdapter(mAdapter);
-		main_listview.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-		main_listview.setDividerHeight(0);  	
+        mAdapter = new Meching_Adapter(activity, arrItem,http_Handler);
+        main_listview.setAdapter(mAdapter);
+        main_listview.setOnRefreshListener(this);
 
 
-		AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			}
-		};
+        AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            }
+        };
 
-		main_listview.setOnItemClickListener(mItemClickListener);		
+        main_listview.setOnItemClickListener(mItemClickListener);
 
-		mAdapter.notifyDataSetChanged();
-	}
+        mAdapter.notifyDataSetChanged();
+    }
 
 
-	@Override
-	public void Http_Receive(Message msg) {
+    @Override
+    public void Http_Receive(Message msg) {
 
-		switch (msg.arg1) {
+        switch (msg.arg1) {
 
-		case HTTP_Handler.HTTP_RECEIVE_FALSE:
+            case HTTP_Handler.HTTP_RECEIVE_FALSE:
 
 //			Log.d("test", "ssss");
 
-			switch (msg.arg2) {
+                switch (msg.arg2) {
 
-			default:
-				break;
-			}
+                    default:
+                        break;
+                }
 
-			break;
+                break;
 
-			//			
-		default:
-			break;
-		}
+            case HTTP_Handler.HTTP_RECEIVE_GET_ROOM:
 
-	}
-	
+                int size =  arrItem.size();
 
+                for (int i = 0; i < size; i++) {
+                    arrItem.remove(0);
+                }
+
+                ArrayList<Room_bean> a = (ArrayList<Room_bean>) msg.obj;
+
+                for (int i=0; i<a.size(); i++){
+                    arrItem.add(a.get(i));
+                }
+
+                mAdapter.notifyDataSetChanged();
+
+                main_listview.onRefreshComplete();
+
+                break;
+
+            //
+            default:
+                break;
+        }
+
+    }
+
+    public void refresh(){
+
+        GET_ROOM_HTTP get_room_http = new GET_ROOM_HTTP(http_Handler,start_loc,HTTP_Handler.HTTP_RECEIVE_GET_ROOM);
+        get_room_http.setShowdialog(false);
+        get_room_http.start();
+
+    }
+
+
+    @Override
+    public void onRefresh(PullToRefreshBase refreshView) {
+        refresh();
+    }
 }

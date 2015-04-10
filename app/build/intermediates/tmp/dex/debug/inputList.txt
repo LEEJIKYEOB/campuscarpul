@@ -15,6 +15,7 @@ C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed
 C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-31da780b6686082623245fedf7ae26508ed24f48.jar
 C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-a54db2b7d1cac986f422e9b591567c7204ef9dfa.jar
 C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-ddd67ac94d3caa17105be870c2fcbb1ecda51af0.jar
+C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-84bd4e151fd2001c524d2049ed3574a369e22a8e.jar
 C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-5fcbe084415df79e35cd868d7fe13f6ebffe21ef.jar
 C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\classes-bea6e843abac937a974eb629f604af7a3572bd25.jar
 C:\Users\j\AndroidstudioProjects\campuscarpul2\app\build\intermediates\pre-dexed\debug\library-2.4.0-d2894854d97629e64097b288a3b137d3731dce86.jar

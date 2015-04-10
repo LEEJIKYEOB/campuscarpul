@@ -1,86 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#EDEDED"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_card_b"
+    android:orientation="horizontal" >
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="79dp"
-        android:background="@android:color/white"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:id="@+id/chatlist_main_imageview"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="4dp"
-            android:background="@color/lightblue_500"
-            android:scaleType="centerCrop" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="86dp"
-            android:layout_marginRight="100dp"
-            android:orientation="vertical"
-            android:weightSum="2" >
-
-            <TextView
-                android:id="@+id/chatlist_nickname_textview"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="닉네임"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/chatlist_text_textview"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:text="나의 한마디 막그래서 어머머어저나나asdasdasdasdasdasdasda"
-                android:textColor="#606060"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/chatlist_time_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:text="오후 3:00"
-                android:textColor="#606060"
-                android:textSize="8sp" />
-
-            <ImageView
-                android:id="@+id/chatlist_check_imageview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/chatlist_time_textview"
-                android:layout_marginTop="16dp" />
-
-        </RelativeLayout>
-    </RelativeLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/main_profileimg"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EDEDED" >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:weightSum="5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:id="@+id/main_room_card_people_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_yes_people"/>
+                <ImageView
+                    android:id="@+id/main_room_card_people_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_no_people"/>
+                <ImageView
+                    android:id="@+id/main_room_card_people_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_no_people"/>
+
+                <ImageView
+                    android:id="@+id/main_room_card_people_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_no_people"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/main_room_card_start_loc_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="대연"
+                    android:textColor="@color/lightblue_900"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_next"/>
+
+                <TextView
+                    android:id="@+id/main_room_card_end_loc_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/lightblue_900"
+                    android:text="동명대"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/hintcolor">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="5"
+            android:gravity="center"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/main_room_card_day_tv"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="03월 12일 (일)"
+                android:textSize="14sp"
+                android:textColor="#5e5e5e" />
+
+            <TextView
+                android:id="@+id/main_room_card_time_tv"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="오전  08 : 50"
+                android:textColor="#5e5e5e"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+
+
+
     </LinearLayout>
+
 
 </LinearLayout>
