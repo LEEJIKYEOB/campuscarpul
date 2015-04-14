@@ -31,6 +31,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -43,186 +44,226 @@ import it.neokree.materialtabs.MaterialTab;
 import me.drakeet.materialdialog.MaterialDialog;
 
 public class Img_bitmap {
-	
-	public static final int SELECT_PHOTO = 1000;
-    public static final int SELECT_GALLERY= 1001;
+
+    public static final int SELECT_PHOTO = 1000;
+    public static final int SELECT_GALLERY = 1001;
+    int IMAGE_MAX_SIZE = 500;
+    private Uri imageUri;
+    private String imageUri_path;
+    private boolean circlebitmap = true;
+    private ImguploadActivity activity;
+
+    public Img_bitmap(final ImguploadActivity activity) {
+        // TODO Auto-generated constructor stub
+
+        this.activity = activity;
+
+    }
+
+    public Img_bitmap(final ImguploadActivity activity, Boolean circlebitmap) {
+        // TODO Auto-generated constructor stub
+
+        this.circlebitmap = circlebitmap;
+
+        this.activity = activity;
+
+    }
+
+    public static int dptopx(Context context, int dp) {
+
+        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
+        return px;
+    }
+
+    public static int pxtodp(Context context, int px) {
 
 
-	private Uri imageUri;
-	private String imageUri_path;
+        float scale = context.getResources().getDisplayMetrics().density;
+        int dp = (int) (px / 1.5f * scale);
 
-	
-	private Join01Activity activity;
-	
-	public Img_bitmap(final Join01Activity activity) {
-		// TODO Auto-generated constructor stub
-		
-		
-		this.activity = activity;
+        return dp;
+    }
 
-	}
-	
-	public int exifOrientationToDegrees(int exifOrientation)
-	{
-		if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_90)
-		{
-			return 90;
-		}
-		else if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_180)
-		{
-			return 180;
-		}
-		else if(exifOrientation == ExifInterface.ORIENTATION_ROTATE_270)
-		{
-			return 270;
-		}
-		return 0;
-	}
+    public static Bitmap getCircleBitmap(Bitmap bitmap) {
 
-	/**
-	 * 이미지를 회전시킵니다.
-	 * 
-	 * @param bitmap 비트맵 이미지
-	 * @param degrees 회전 각도
-	 * @return 회전된 이미지
-	 */
-	public Bitmap rotate(Bitmap bitmap, int degrees)
-	{
-		if(degrees != 0 && bitmap != null)
-		{
-			Matrix m = new Matrix();
-			m.setRotate(degrees, (float) bitmap.getWidth() / 2, (float) bitmap.getHeight() / 2);
+        int x;
+        int r1, r2;
+        if (bitmap.getWidth() >= bitmap.getHeight()) {
+            x = bitmap.getHeight();
+            r1 = (int) (bitmap.getWidth() - bitmap.getHeight()) / 2;
+            r2 = 0;
+        } else {
+            x = bitmap.getWidth();
+            r1 = 0;
+            r2 = (int) (bitmap.getHeight() - bitmap.getWidth()) / 2;
+        }
 
-			try
-			{
-				Bitmap converted = Bitmap.createBitmap(bitmap, 0, 0,
-						bitmap.getWidth(), bitmap.getHeight(), m, true);
-				if(bitmap != converted)
-				{
-					bitmap.recycle();
-					bitmap = converted;
-				}
-			}
-			catch(OutOfMemoryError ex)
-			{
-				// 메모리가 부족하여 회전을 시키지 못할 경우 그냥 원본을 반환합니다.
-//				Toast.makeText(getApplicationContext(), "메모리가 부족합니다.", Toast.LENGTH_SHORT).show();	
-				return null;
-			}
-		}
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        int size = (x / 2);
+        canvas.drawCircle(bitmap.getWidth() / 2, bitmap.getHeight() / 2, size, paint);
+        paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
 
-		return bitmap;
-	}
+        Log.d("test", "output.getWidth(); = " + output.getWidth());
+        Log.d("test", "output.getHeight(); = " + output.getHeight());
 
-	int IMAGE_MAX_SIZE = 500;
-	public Bitmap getPhotoBitmapOfOptions(Uri imageUri,String s){
-		
-		String fileName = imageUri.getPath();
 
-        Log.d("test","fileName = "+fileName);
+        return output;
+    }
 
-		//Decode image size
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;
-		BitmapFactory.decodeFile(fileName, options);
+    public int exifOrientationToDegrees(int exifOrientation) {
+        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
+            return 90;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
+            return 180;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
+            return 270;
+        }
+        return 0;
+    }
 
-		int scale = 1;
-		if (options.outHeight > IMAGE_MAX_SIZE || options.outWidth > IMAGE_MAX_SIZE) {
-			scale = (int)Math.pow(2, (int) Math.round(Math.log(IMAGE_MAX_SIZE / 
-					(double) Math.max(options.outHeight, options.outWidth)) / Math.log(0.5)));     
-		}
+    /**
+     * 이미지를 회전시킵니다.
+     *
+     * @param bitmap  비트맵 이미지
+     * @param degrees 회전 각도
+     * @return 회전된 이미지
+     */
+    public Bitmap rotate(Bitmap bitmap, int degrees) {
+        if (degrees != 0 && bitmap != null) {
+            Matrix m = new Matrix();
+            m.setRotate(degrees, (float) bitmap.getWidth() / 2, (float) bitmap.getHeight() / 2);
+
+            try {
+                Bitmap converted = Bitmap.createBitmap(bitmap, 0, 0,
+                        bitmap.getWidth(), bitmap.getHeight(), m, true);
+                if (bitmap != converted) {
+                    bitmap.recycle();
+                    bitmap = converted;
+                }
+            } catch (OutOfMemoryError ex) {
+                // 메모리가 부족하여 회전을 시키지 못할 경우 그냥 원본을 반환합니다.
+//				Toast.makeText(getApplicationContext(), "메모리가 부족합니다.", Toast.LENGTH_SHORT).show();
+                return null;
+            }
+        }
+
+        return bitmap;
+    }
+
+    public Bitmap getPhotoBitmapOfOptions(Uri imageUri) {
+
+        String fileName = imageUri.getPath();
+
+        Log.d("test", "fileName = " + fileName);
+
+        //Decode image size
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(fileName, options);
+
+        int scale = 1;
+        if (options.outHeight > IMAGE_MAX_SIZE || options.outWidth > IMAGE_MAX_SIZE) {
+            scale = (int) Math.pow(2, (int) Math.round(Math.log(IMAGE_MAX_SIZE /
+                    (double) Math.max(options.outHeight, options.outWidth)) / Math.log(0.5)));
+        }
 
         BitmapFactory.Options options2 = new BitmapFactory.Options();
 
-		Bitmap image=null;
-		if(scale == 1){
+        Bitmap image = null;
+        if (scale == 1) {
             options2.inSampleSize = 1;
-			//image = BitmapFactory.decodeFile(imagePath, options);
-		}else{
-            options2.inSampleSize = (int)(scale/2);
-			//image = BitmapFactory.decodeFile(imagePath, options);
-			//image = Bitmap.createScaledBitmap(image, 500, 500, true);
-		}
+            //image = BitmapFactory.decodeFile(imagePath, options);
+        } else {
+            options2.inSampleSize = (int) (scale / 2);
+            //image = BitmapFactory.decodeFile(imagePath, options);
+            //image = Bitmap.createScaledBitmap(image, 500, 500, true);
+        }
 
-		image = BitmapFactory.decodeFile(fileName, options2);
+        image = BitmapFactory.decodeFile(fileName, options2);
 
         saveBitmaptoJpeg(image);
 
-        s = Environment.getExternalStorageDirectory()+"cc_temp_profileimg.jpg";
+        // 이미지를 상황에 맞게 회전시킨다
+        ExifInterface exif = null;
+        try {
+            exif = new ExifInterface(fileName);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        int exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+        int exifDegree = exifOrientationToDegrees(exifOrientation);
+        Bitmap img_src = rotate(image, exifDegree);
 
-		// 이미지를 상황에 맞게 회전시킨다
-		ExifInterface exif = null;
-		try {
-			exif = new ExifInterface(fileName);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		int exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-		int exifDegree = exifOrientationToDegrees(exifOrientation);
-		Bitmap img_src = rotate(image, exifDegree);
+        if (circlebitmap) {
+            image = getCircleBitmap(img_src);
+        }
 
-		img_src = getCircleBitmap(img_src);
-		
-		return img_src;
-	}
+        return img_src;
+    }
 
-	public Bitmap getGallaryBitmapOfOptions(AssetFileDescriptor afd,Intent data,String s){
+    public Bitmap getGallaryBitmapOfOptions(AssetFileDescriptor afd, Intent data) {
 
-		//Decode image size
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;
-		BitmapFactory.decodeFileDescriptor(afd.getFileDescriptor(), null, options);	
+        //Decode image size
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFileDescriptor(afd.getFileDescriptor(), null, options);
 
-		int scale = 1;
-		if (options.outHeight > IMAGE_MAX_SIZE || options.outWidth > IMAGE_MAX_SIZE) {
-			scale = (int)Math.pow(2, (int) Math.round(Math.log(IMAGE_MAX_SIZE / 
-					(double) Math.max(options.outHeight, options.outWidth)) / Math.log(0.5)));     
-		}
-		
-		Log.d("test", "scale = "+scale);
-		
-		BitmapFactory.Options options2 = new BitmapFactory.Options();
+        int scale = 1;
+        if (options.outHeight > IMAGE_MAX_SIZE || options.outWidth > IMAGE_MAX_SIZE) {
+            scale = (int) Math.pow(2, (int) Math.round(Math.log(IMAGE_MAX_SIZE /
+                    (double) Math.max(options.outHeight, options.outWidth)) / Math.log(0.5)));
+        }
 
-		Bitmap image=null;
-		if(scale == 1){
-			options2.inSampleSize = 1;
-			//image = BitmapFactory.decodeFile(imagePath, options);
-		}else{		
-			options2.inSampleSize = (int)(scale/2);
-			//image = BitmapFactory.decodeFile(imagePath, options);
-			//image = Bitmap.createScaledBitmap(image, 500, 500, true);
-		}
+        Log.d("test", "scale = " + scale);
 
-		image = BitmapFactory.decodeFileDescriptor(afd.getFileDescriptor(),null, options2);
+        BitmapFactory.Options options2 = new BitmapFactory.Options();
 
-		saveBitmaptoJpeg(image);
+        Bitmap image = null;
+        if (scale == 1) {
+            options2.inSampleSize = 1;
+            //image = BitmapFactory.decodeFile(imagePath, options);
+        } else {
+            options2.inSampleSize = (int) (scale / 2);
+            //image = BitmapFactory.decodeFile(imagePath, options);
+            //image = Bitmap.createScaledBitmap(image, 500, 500, true);
+        }
 
-        s = activity.getFilesDir().getPath()+"cc_temp_profileimg.jpg";
-		
-		// 이미지를 상황에 맞게 회전시킨다
-		Uri imageUri = data.getData();
-		String[] orientationColumn = {MediaStore.Images.Media.ORIENTATION};
-		Cursor cur = activity.managedQuery(imageUri, orientationColumn, null, null, null);
-		int orientation = -1;
-		if (cur != null && cur.moveToFirst()) {
-			orientation = cur.getInt(cur.getColumnIndex(orientationColumn[0]));
-		}  
-		//Matrix matrix = new Matrix();
-		//matrix.postRotate(orientation);
+        image = BitmapFactory.decodeFileDescriptor(afd.getFileDescriptor(), null, options2);
 
-		image = rotate(image, orientation);
+        saveBitmaptoJpeg(image);
+
+        // 이미지를 상황에 맞게 회전시킨다
+        Uri imageUri = data.getData();
+        String[] orientationColumn = {MediaStore.Images.Media.ORIENTATION};
+        Cursor cur = activity.managedQuery(imageUri, orientationColumn, null, null, null);
+        int orientation = -1;
+        if (cur != null && cur.moveToFirst()) {
+            orientation = cur.getInt(cur.getColumnIndex(orientationColumn[0]));
+        }
+        //Matrix matrix = new Matrix();
+        //matrix.postRotate(orientation);
+
+        image = rotate(image, orientation);
 //		Bitmap img_corner1 = LIB_Define.setRoundCorner(image1, 15);
 
-		image = getCircleBitmap(image);
-		
-		return image;
-	}
-	
-	
+        if (circlebitmap) {
+            image = getCircleBitmap(image);
+        }
 
-	public void showimgdialog() {
-		// TODO Auto-generated method stub
+        return image;
+    }
+
+    public void showimgdialog() {
+        // TODO Auto-generated method stub
 
 
 //        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -232,7 +273,7 @@ public class Img_bitmap {
 //        );
 
         ListView listView;
-        final MaterialDialog  mMaterialDialog = new MaterialDialog(activity);
+        final MaterialDialog mMaterialDialog = new MaterialDialog(activity);
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 activity,
@@ -245,7 +286,7 @@ public class Img_bitmap {
 
         listView = new ListView(activity);
         listView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        float scale =activity.getResources().getDisplayMetrics().density;
+        float scale = activity.getResources().getDisplayMetrics().density;
         int dpAsPixels = (int) (8 * scale + 0.5f);
         listView.setPadding(0, dpAsPixels, 0, dpAsPixels);
         listView.setDividerHeight(1);
@@ -253,9 +294,9 @@ public class Img_bitmap {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("test","position = " +position);
-                Log.d("test","view = " +view.getId());
-                Log.d("test","id = " +id);
+                Log.d("test", "position = " + position);
+                Log.d("test", "view = " + view.getId());
+                Log.d("test", "id = " + id);
 
 
                 switch (position) {
@@ -282,14 +323,16 @@ public class Img_bitmap {
 
                         imageUri = Uri.fromFile(photo);
 
-                        activity.imageUri = imageUri;
 
-                        activity.img_src = Environment.getExternalStorageDirectory()+"cc_temp_profileimg.jpg";
+                        activity.setimgUri(imageUri);
+//                        activity.imageUri = imageUri;
+
+//                        activity.img_src = Environment.getExternalStorageDirectory()+"cc_temp_profileimg.jpg";
 
                         // 카메라를 호출합니다.
                         Intent i = new Intent("android.media.action.IMAGE_CAPTURE");
                         i.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                        activity.startActivityForResult(i,SELECT_PHOTO);
+                        activity.startActivityForResult(i, SELECT_PHOTO);
 
                         mMaterialDialog.dismiss();
 
@@ -299,8 +342,9 @@ public class Img_bitmap {
 //					user_Info_bean.setPhoto(img_select, null);
 //					imageView[img_select].setImageBitmap(null);
 
-                        activity.imageView.setImageBitmap(null);
-                        activity.img_src = null;
+
+                        activity.setimgcancel();
+
                         mMaterialDialog.dismiss();
 
 
@@ -317,7 +361,7 @@ public class Img_bitmap {
         mMaterialDialog.setTitle("사진등록");
         mMaterialDialog.setContentView(listView);
         mMaterialDialog.setCanceledOnTouchOutside(true);
-        mMaterialDialog.setPositiveButton("취소",new View.OnClickListener() {
+        mMaterialDialog.setPositiveButton("취소", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mMaterialDialog.dismiss();
@@ -328,67 +372,34 @@ public class Img_bitmap {
         mMaterialDialog.show();
 
 
+    }
 
-	}
-	
-	
-	public String getPathFromUri(Uri uri){
-		Cursor cursor = activity.getContentResolver().query(uri, null, null, null, null );
-		cursor.moveToNext(); 
-		String path = cursor.getString( cursor.getColumnIndex( "_data" ) );
-		cursor.close();
+    public String getPathFromUri(Uri uri) {
+        Cursor cursor = activity.getContentResolver().query(uri, null, null, null, null);
+        cursor.moveToNext();
+        String path = cursor.getString(cursor.getColumnIndex("_data"));
+        cursor.close();
 
 
-		return path;
-	}
+        return path;
+    }
 
+    public void saveBitmaptoJpeg(Bitmap bitmap) {
+        try {
 
-	public void saveBitmaptoJpeg(Bitmap bitmap){
-		try{
+            FileOutputStream out = new FileOutputStream(Environment.getExternalStorageDirectory() + "/cc_temp_profileimg.jpg");
 
-			FileOutputStream out = new FileOutputStream(activity.getFilesDir().getPath()+"cc_temp_profileimg.jpg");
-			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-			out.close();
+            Log.d("test", "s = " + Environment.getExternalStorageDirectory() + "/cc_temp_profileimg.jpg");
 
-		}catch(FileNotFoundException exception){
-			Log.e("FileNotFoundException", exception.getMessage());
-		}catch(IOException exception){
-			Log.e("IOException", exception.getMessage());
-		}
-	}
-	
-	public Bitmap getCircleBitmap(Bitmap bitmap) {
-		int x;
-		int r1,r2;
-		if (bitmap.getWidth() >= bitmap.getHeight()) {
-			x = bitmap.getHeight();
-			r1 = (int)(bitmap.getWidth() - bitmap.getHeight())/2;
-			r2 = 0;
-		}else{
-			x = bitmap.getWidth();
-			r1 = 0;
-			r2 = (int)(bitmap.getHeight() - bitmap.getWidth())/2;
-		}
-		
-		Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Config.ARGB_8888);
-		Canvas canvas = new Canvas(output);
-		final int color = 0xff424242;
-		final Paint paint = new Paint();
-		final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-		paint.setAntiAlias(true);
-		canvas.drawARGB(0, 0, 0, 0);
-		paint.setColor(color);
-		int size = (x/2);
-		canvas.drawCircle(bitmap.getWidth()/2, bitmap.getHeight()/2, size, paint);
-		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
-		canvas.drawBitmap(bitmap, rect, rect, paint);
-		
-		Log.d("test", "output.getWidth(); = " +output.getWidth());
-		Log.d("test", "output.getHeight(); = " +output.getHeight());
-		
-		
-		return output;
-	}
-	
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            out.close();
+
+        } catch (FileNotFoundException exception) {
+            Log.e("FileNotFoundException", exception.getMessage());
+        } catch (IOException exception) {
+            Log.e("IOException", exception.getMessage());
+        }
+    }
+
 
 }

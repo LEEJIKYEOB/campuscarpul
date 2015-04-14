@@ -1,66 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_room_card_back_rl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/main_card_b"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:paddingRight="8dp">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/main_profileimg"/>
+        android:id="@+id/main_room_card_profileimg_iv"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:background="@drawable/main_profileimg"
+        android:padding="11dp"
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="92dp"
+        android:layout_toRightOf="@id/main_room_card_profileimg_iv"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:weightSum="5"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="5">
 
             <LinearLayout
                 android:layout_width="0px"
-                android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="2"
                 android:gravity="center"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/main_room_card_people_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/main_yes_people"/>
+                    android:src="@drawable/main_yes_people" />
+
                 <ImageView
                     android:id="@+id/main_room_card_people_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/main_no_people"/>
+                    android:src="@drawable/main_no_people" />
+
                 <ImageView
                     android:id="@+id/main_room_card_people_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/main_no_people"/>
+                    android:src="@drawable/main_no_people" />
 
                 <ImageView
                     android:id="@+id/main_room_card_people_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/main_no_people"/>
+                    android:src="@drawable/main_no_people" />
 
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="0px"
-                android:layout_weight="3"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/main_room_card_start_loc_tv"
                     android:layout_width="wrap_content"
@@ -68,37 +77,38 @@
                     android:layout_gravity="center"
                     android:text="대연"
                     android:textColor="@color/lightblue_900"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_next"/>
+                    android:src="@drawable/ic_next" />
 
                 <TextView
                     android:id="@+id/main_room_card_end_loc_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/lightblue_900"
                     android:text="동명대"
-                    android:textSize="18sp"/>
+                    android:textColor="@color/lightblue_900"
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/hintcolor">
-        </LinearLayout>
+            android:background="@color/hintcolor"></LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="5"
-            android:gravity="center"
             android:layout_marginBottom="4dp"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="5">
 
             <TextView
                 android:id="@+id/main_room_card_day_tv"
@@ -107,8 +117,8 @@
                 android:layout_weight="2"
                 android:gravity="center"
                 android:text="03월 12일 (일)"
-                android:textSize="14sp"
-                android:textColor="#5e5e5e" />
+                android:textColor="#5e5e5e"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/main_room_card_time_tv"
@@ -118,15 +128,21 @@
                 android:gravity="center"
                 android:text="오전  08 : 50"
                 android:textColor="#5e5e5e"
-                android:textStyle="bold"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
 
-
-
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/main_room_card_state_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/main_room_card_profileimg_iv"
+        android:src="@drawable/join_seal"
+        android:visibility="gone" />
 
-</LinearLayout>
+</RelativeLayout>

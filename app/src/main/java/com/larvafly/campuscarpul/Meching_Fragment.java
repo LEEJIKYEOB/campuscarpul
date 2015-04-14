@@ -40,7 +40,7 @@ import com.larvafly.http.HTTP_Handler;
 import com.larvafly.lib.Android_Size;
 
 @SuppressLint("ValidFragment")
-public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,PullToRefreshBase.OnRefreshListener {
+public class Meching_Fragment extends Fragment implements OnHttpReceiveListener, PullToRefreshBase.OnRefreshListener {
 
     private Activity activity;
     private PullToRefreshListView main_listview;
@@ -50,10 +50,12 @@ public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,
     private LinearLayout linearLayout;
     private int start_loc;
 
-    public Meching_Fragment(Activity activity,int start_loc) {
+    private Boolean init = false;
+
+    public Meching_Fragment(Activity activity, int start_loc) {
 
         this.activity = activity;
-        this.start_loc =start_loc;
+        this.start_loc = start_loc;
 
         http_Handler = new HTTP_Handler(this, activity);
 
@@ -66,26 +68,19 @@ public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,
         View view = inflater.inflate(R.layout.fragment_meching, null);
 
 
-        main_listview = (PullToRefreshListView)view.findViewById(R.id.meching_lv);
+        main_listview = (PullToRefreshListView) view.findViewById(R.id.meching_lv);
 
         //		linearLayout = (LinearLayout)view.findViewById(R.id.Main_ScrollView_LinearLayout);
 
         arrItem = new ArrayList<>();
 
 
-//        GET_ROOM_HTTP get_room_http = new GET_ROOM_HTTP(http_Handler,start_loc,HTTP_Handler.HTTP_RECEIVE_GET_ROOM);
-//        get_room_http.setShowdialog(false);
-//        get_room_http.start();
-
-//		MAIN_GET_CARD_INFO_HTTP card_1 = new MAIN_GET_CARD_INFO_HTTP(http_Handler, Static_date.my_user_idx, HTTP_Handler.HTTP_RECEIVE_MAIN_GET_CARD);
-//		card_1.start();
-
         init_cardlist();
 
         return view;
     }
 
-    public void main_fragment_refresh(){
+    public void main_fragment_refresh() {
 
 //		MAIN_GET_CARD_INFO_HTTP card_1 = new MAIN_GET_CARD_INFO_HTTP(http_Handler, Static_date.my_user_idx, HTTP_Handler.HTTP_RECEIVE_MAIN_GET_CARD);
 //		card_1.setShowdialog(false);
@@ -94,23 +89,33 @@ public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,
     }
 
 
-    void init_cardlist()
-    {
+    void init_cardlist() {
 
 
-        mAdapter = new Meching_Adapter(activity, arrItem,http_Handler);
+        mAdapter = new Meching_Adapter(activity, arrItem, http_Handler);
         main_listview.setAdapter(mAdapter);
         main_listview.setOnRefreshListener(this);
 
 
         AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Log.d("test", "view = " + view + "position = " + position);
+
+                Intent intent = new Intent(activity, RoomInfoActivity.class);
+                intent.putExtra("info", arrItem.get(position - 1));
+                startActivity(intent);
+
             }
         };
 
         main_listview.setOnItemClickListener(mItemClickListener);
 
         mAdapter.notifyDataSetChanged();
+
+        init = true;
+
+        refresh();
     }
 
 
@@ -133,7 +138,7 @@ public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,
 
             case HTTP_Handler.HTTP_RECEIVE_GET_ROOM:
 
-                int size =  arrItem.size();
+                int size = arrItem.size();
 
                 for (int i = 0; i < size; i++) {
                     arrItem.remove(0);
@@ -141,7 +146,7 @@ public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,
 
                 ArrayList<Room_bean> a = (ArrayList<Room_bean>) msg.obj;
 
-                for (int i=0; i<a.size(); i++){
+                for (int i = 0; i < a.size(); i++) {
                     arrItem.add(a.get(i));
                 }
 
@@ -158,12 +163,13 @@ public class Meching_Fragment extends Fragment implements OnHttpReceiveListener,
 
     }
 
-    public void refresh(){
+    public void refresh() {
 
-        GET_ROOM_HTTP get_room_http = new GET_ROOM_HTTP(http_Handler,start_loc,HTTP_Handler.HTTP_RECEIVE_GET_ROOM);
-        get_room_http.setShowdialog(false);
-        get_room_http.start();
-
+        if (init) {
+            GET_ROOM_HTTP get_room_http = new GET_ROOM_HTTP(http_Handler, start_loc, HTTP_Handler.HTTP_RECEIVE_GET_ROOM);
+            get_room_http.setShowdialog(false);
+            get_room_http.start();
+        }
     }
 
 

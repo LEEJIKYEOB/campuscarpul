@@ -10,35 +10,59 @@ import org.json.JSONObject;
 import android.content.Context;
 
 import com.google.android.gcm.server.*;
+import com.larvafly.bean.Gcm_bean;
 import com.larvafly.lib.Static_date;
 
-public class GCMServerSide {
-
-	public void sendMessage(Context context,ArrayList<String> devicekey) throws IOException {
-
-		Sender sender = new Sender(Static_date.APPKEY);
-		
-//		bean.setSend_me_check(false);
-
-//		devicekey = Static_date.registerGcm(context);
-
-		Message message = new Message.Builder().addData("msg", "aaa").build();
+public class GCMServerSide extends Thread {
 
 
-		MulticastResult multiResult = sender.send(message, devicekey, 5);
+    private Context context;
+    private ArrayList<String> devicekey;
+    private Gcm_bean gcm_bean;
 
-		if (multiResult != null) {
+    public GCMServerSide(Context context, ArrayList<String> devicekey, Gcm_bean gcm_bean) {
 
-			List<Result> resultList = multiResult.getResults();
+        this.context = context;
+        this.devicekey = devicekey;
+        this.gcm_bean = gcm_bean;
+
+    }
+
+    @Override
+    public void run() {
+
+        try {
+            sendMessage();
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void sendMessage() throws IOException {
 
 
-			for (Result result : resultList) {
+        ArrayList<String> devicekey1 = new ArrayList<>();
+        devicekey1.add(Static_date.myProfile.getDevicekey());
 
-				System.out.println(result.getMessageId());
+        Sender sender = new Sender(Static_date.APPKEY);
 
-			}
+        Message message = new Message.Builder().addData("msg", gcm_bean.getJSON()).build();
 
-		}
 
-	}
+        MulticastResult multiResult = sender.send(message, devicekey1, 5);
+
+        if (multiResult != null) {
+
+            List<Result> resultList = multiResult.getResults();
+
+
+            for (Result result : resultList) {
+
+                System.out.println(result.getMessageId());
+
+            }
+
+        }
+
+    }
 }

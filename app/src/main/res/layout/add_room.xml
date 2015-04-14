@@ -1,271 +1,308 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/window_background"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/lightblue_500"/>
+        android:background="@color/lightblue_500" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_margin="4dp"
+        android:background="@drawable/abc_popup_background_mtrl_mult">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/lightblue_500" />
+
+        <ImageView
+            android:id="@+id/add_room_orderimg_iv"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:background="@drawable/main_profileimg"
+            android:padding="11dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/add_room_ordername_tv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="16dp"
-            >
+            android:layout_alignTop="@+id/add_room_orderimg_iv"
+            android:layout_marginTop="24dp"
+            android:layout_toEndOf="@+id/add_room_orderimg_iv"
+            android:layout_toRightOf="@+id/add_room_orderimg_iv"
+            android:text="운전자 이름"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginRight="16dp"
-                android:scaleType="center"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_day"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <com.gc.materialdesign.views.ButtonFlat
-                    android:id="@+id/add_room_day_btn"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2015년  04월  09(목)"
-                    android:textSize="20sp"
-                    ></com.gc.materialdesign.views.ButtonFlat>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_weight="1"
-            android:layout_marginTop="16dp">
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:scaleType="center"
-                android:layout_marginRight="16dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_time"/>
-
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/add_room_orderimg_iv"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <com.gc.materialdesign.views.ButtonFlat
-                    android:id="@+id/add_room_time_btn"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="오전  8 : 45"
-                    android:textSize="20sp"
-                    ></com.gc.materialdesign.views.ButtonFlat>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_weight="1"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="16dp">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:scaleType="center"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
                 android:layout_marginRight="16dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_loc"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <Spinner
-                    android:id="@+id/start_location_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    />
+                android:layout_marginTop="8dp">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
                     android:scaleType="center"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_next"/>
+                    android:src="@drawable/ic_day" />
 
-                <Spinner
-                    android:id="@+id/end_location_spinner"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_height="wrap_content"/>
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:text="날짜"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/add_room_day_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="2015년  04월  09(목)"
+                    android:textSize="20sp"></com.gc.materialdesign.views.ButtonFlat>
+
 
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:scaleType="center"
-                android:layout_gravity="center"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/ic_people"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_time" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:text="시간"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/add_room_time_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="오전  8 : 45"
+                    android:textSize="20sp"></com.gc.materialdesign.views.ButtonFlat>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_loc" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:text="카풀존"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/start_location_btn"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@color/white"
+                        android:text="대연" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_next" />
+
+                    <Button
+                        android:id="@+id/end_location_btn"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@color/white"
+                        android:text="동명" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_people" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:text="좌석"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    >
-                    <Button
-                        android:id="@+id/max_people_1_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@color/hintcolor"
-                        android:text="1"
-                        android:textColor="@android:color/white"/>
-                    <Button
-                        android:id="@+id/max_people_2_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@color/hintcolor"
-                        android:text="2"
-                        android:textColor="@android:color/white"/>
-                    <Button
-                        android:id="@+id/max_people_3_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@color/hintcolor"
-                        android:text="3"
-                        android:textColor="@android:color/white"/>
-                    <Button
-                        android:id="@+id/max_people_4_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@color/point"
-                        android:text="4"
-                        android:textColor="@android:color/white"/>
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/max_people_1_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:src="@drawable/addroom_yes_people" />
+
+                        <ImageButton
+                            android:id="@+id/max_people_2_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:src="@drawable/addroom_yes_people" />
+
+                        <ImageButton
+                            android:id="@+id/max_people_3_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:src="@drawable/addroom_no_people" />
+
+                        <ImageButton
+                            android:id="@+id/max_people_4_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:src="@drawable/addroom_no_people" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_weight="1"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:scaleType="center"
-                android:layout_gravity="center"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/ic_carnum_b"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_carnum_b" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:text="차량번호"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
                 <com.rengwuxian.materialedittext.MaterialEditText
                     android:id="@+id/add_room_carnum_met"
-                    android:layout_width="0px"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="32dp"
-                    android:layout_marginLeft="32dp"
                     android:layout_gravity="center"
-                    app:met_errorColor="@color/red_300"
+                    android:layout_marginRight="24dp"
                     android:hint="차량번호"
                     android:textCursorDrawable="@drawable/text_cursor_cyan"
                     app:met_baseColor="#000000"
-                    app:met_textColor="@android:color/black"
-                    app:met_maxCharacters="10"
                     app:met_bottomTextSize="0sp"
+                    app:met_errorColor="@color/red_300"
                     app:met_floatingLabelTextSize="0sp"
+                    app:met_maxCharacters="10"
                     app:met_primaryColor="@color/lightblue_500"
-                    />
+                    app:met_textColor="@android:color/black" />
 
             </LinearLayout>
-        </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.gc.materialdesign.views.ButtonRectangle
-                android:id="@+id/add_room_cancel_btr"
-                android:layout_width="150dp"
-                android:background="@color/hintcolor"
-                android:layout_height="48dp"
-                android:text="취소"
-                />
-
-            <com.gc.materialdesign.views.ButtonRectangle
-                android:id="@+id/add_room_ok_btr"
-                android:layout_width="150dp"
-                android:background="@color/point"
-                android:layout_height="48dp"
-                android:text="생성"
-                />
 
         </LinearLayout>
 
-    </LinearLayout>
-
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/add_room_ok_btr"
+            android:layout_width="144dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:background="@color/point"
+            android:text="생성하기" />
+    </RelativeLayout>
 
 
 </LinearLayout>

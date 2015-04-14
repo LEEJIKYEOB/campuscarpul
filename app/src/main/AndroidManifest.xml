@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.larvafly.campuscarpul"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <permission
         android:name="com.larvafly.campuscarpul.permission.C2D_MESSAGE"
@@ -28,10 +29,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".IntroActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,35 +41,40 @@
             </intent-filter>
         </activity>
 
-         <activity
+        <activity
             android:name="Join01Activity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
-             android:windowSoftInputMode="adjustUnspecified">
-        </activity>
+            android:windowSoftInputMode="adjustUnspecified"></activity>
         <activity
             android:name="Join02Activity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified" >
-        </activity>
+            android:windowSoftInputMode="adjustUnspecified"></activity>
         <activity
             android:name="LoginActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified" >
-        </activity>
+            android:windowSoftInputMode="adjustUnspecified"></activity>
         <activity
             android:name="MainActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified" >
-        </activity>
+            android:windowSoftInputMode="adjustUnspecified"></activity>
         <activity
             android:name=".Add_room"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified" >
-        </activity>
+            android:windowSoftInputMode="adjustUnspecified"></activity>
+        <activity
+            android:name=".RoomInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified"></activity>
 
         <receiver
             android:name="com.google.android.gcm.GCMBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
@@ -76,7 +83,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="GCMIntentService" >
+        <service android:name="GCMIntentService">
 
         </service>
 

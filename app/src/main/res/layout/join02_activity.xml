@@ -1,12 +1,101 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.larvafly.campuscarpul.MainActivity" >
+    android:background="@color/white"
+    tools:context="com.larvafly.campuscarpul.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/lightblue_500" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="24dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="144dp">
+
+            <ImageView
+                android:id="@+id/join02_carimg_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EDEDED"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:background="#33000000">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:drawableLeft="@drawable/ic_carcard"
+                    android:drawablePadding="16dp"
+                    android:gravity="center_vertical"
+                    android:text="  운전면허증 등록"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/join02_carnum_met"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="차량번호"
+            android:inputType="text"
+            android:textCursorDrawable="@drawable/text_cursor_cyan"
+            app:met_baseColor="#000000"
+            app:met_bottomTextSize="0sp"
+            app:met_floatingLabelTextSize="0sp"
+            app:met_iconLeft="@drawable/ic_carnum"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="@color/lightblue_500"
+            app:met_singleLineEllipsis="true"
+            app:met_textColor="@android:color/black" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/join02_carclass_met"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="차량종료"
+            android:inputType="text"
+            android:textCursorDrawable="@drawable/text_cursor_cyan"
+            app:met_baseColor="#000000"
+            app:met_bottomTextSize="0sp"
+            app:met_floatingLabelTextSize="0sp"
+            app:met_iconLeft="@drawable/ic_car"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="@color/lightblue_500"
+            app:met_singleLineEllipsis="true"
+            app:met_textColor="@android:color/black" />
+
+
+    </LinearLayout>
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/join02_ok_br"
+        android:layout_width="144dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="등록하기"></com.gc.materialdesign.views.ButtonRectangle>
 
 </RelativeLayout>

@@ -22,54 +22,57 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GET_ROOM_HTTP extends HTTP_Thread{
+public class GET_ROOM_HTTP extends HTTP_Thread {
 
 
     private int start_loc;
 
     public GET_ROOM_HTTP(HTTP_Handler handler, int start_loc, int resultcode) {
-        super(handler,resultcode);
+        super(handler, resultcode);
         this.start_loc = start_loc;
     }
 
     @Override
-    public void run()
-    {
+    public void run() {
 
-            try {
+        try {
 
-                HttpClient client = new DefaultHttpClient();
-                String postURL = "http://ukplio.cafe24.com/campuscarpul/RoomGet.php";
-                HttpPost post = new HttpPost(postURL);
+            HttpClient client = new DefaultHttpClient();
+            String postURL = "http://ukplio.cafe24.com/campuscarpul/RoomGet.php";
+            HttpPost post = new HttpPost(postURL);
 
-                List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("start_loc", String.valueOf(start_loc)));
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("start_loc", String.valueOf(start_loc)));
 
 
-                UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
-                post.setEntity(ent);
-                HttpResponse responsePOST = client.execute(post);
-                HttpEntity resEntity = responsePOST.getEntity();
+            UrlEncodedFormEntity ent = new UrlEncodedFormEntity(params, HTTP.UTF_8);
+            post.setEntity(ent);
+            HttpResponse responsePOST = client.execute(post);
+            HttpEntity resEntity = responsePOST.getEntity();
 
-                if (resEntity != null) {
+            if (resEntity != null) {
 
-                    String result = EntityUtils.toString(resEntity);
-                    Log.i("RESPONSE", result);
-                    Log.i("RESPONSE", "start_loc = "+ start_loc);
+                String result = EntityUtils.toString(resEntity);
+                Log.i("RESPONSE", result);
+                Log.i("RESPONSE", "start_loc = " + start_loc);
 
-                    JSONObject jsonObject = new JSONObject(result);
+                JSONObject jsonObject = new JSONObject(result);
 
-                    int result1 = jsonObject.getInt("result_code");
+                int result1 = jsonObject.getInt("result_code");
 
-                    if (result1 == HTTP_Handler.HTTP_RECEIVE_TRUE){
+                if (result1 == HTTP_Handler.HTTP_RECEIVE_TRUE) {
+
+                    int result_index = jsonObject.getInt("result_index");
+
+                    if (result_index != 0) {
 
                         JSONArray jsonArray = jsonObject.getJSONArray("result_data");
                         ArrayList<Room_bean> array_bean = new ArrayList<Room_bean>();
 
 
-                        Log.d("test","jsonArray.length() = " +jsonArray.length());
+                        Log.d("test", "jsonArray.length() = " + jsonArray.length());
 
-                        for (int i = 0 ; i<jsonArray.length(); i++){
+                        for (int i = 0; i < jsonArray.length(); i++) {
 
                             Room_bean bean = new Room_bean();
 
@@ -93,7 +96,7 @@ public class GET_ROOM_HTTP extends HTTP_Thread{
 //                                bean.setCreate_time(json_data.getString("create_time"));
                                 bean.setIdx(json_data.getInt("idx"));
                                 bean.setOrder_id(json_data.getInt("order_id"));
-                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                 bean.setTime(simpleDateFormat.parse(json_data.getString("time")));
                                 bean.setStart_locale(json_data.getInt("start_locale"));
                                 bean.setEnd_locale(json_data.getInt("end_locale"));
@@ -104,37 +107,53 @@ public class GET_ROOM_HTTP extends HTTP_Thread{
                                 bean.setPeople_idx_2(json_data.getInt("people_idx_2"));
                                 bean.setPeople_idx_3(json_data.getInt("people_idx_3"));
                                 bean.setPeople_idx_4(json_data.getInt("people_idx_4"));
+                                bean.setState(json_data.getInt("state"));
+                                bean.setOrder_img_uri(json_data.getString("order_img_uri"));
+                                bean.setOrder_name(json_data.getString("order_name"));
+                                bean.setOrder_devicekey(json_data.getString("order_devicekey"));
+                                bean.setPeople1_devicekey(json_data.getString("people1_devicekey"));
+                                bean.setPeople2_devicekey(json_data.getString("people2_devicekey"));
+                                bean.setPeople3_devicekey(json_data.getString("people3_devicekey"));
+                                bean.setPeople4_devicekey(json_data.getString("people4_devicekey"));
+
 
                             } catch (Exception e) {
                                 // TODO: handle exception
-                                Log.d("test","error = " + e.toString());
+                                Log.d("test", "error = " + e.toString());
                             }
 
                             array_bean.add(bean);
 
                         }
 
-                        Log.d("test","array_bean.size() = " +array_bean.size());
+
+                        Log.d("test", "array_bean.size() = " + array_bean.size());
 
                         message.obj = array_bean;
                         http_Handler.sendMessage(message);
 
+                    } else {
 
-                    }else{
-                        message.arg1 = http_Handler.HTTP_RECEIVE_FALSE;
-                        message.arg2 = http_Handler.HTTP_RECEIVE_ERROR_CODE_20002;
+                        ArrayList<Room_bean> array_bean = new ArrayList<Room_bean>();
+                        message.obj = array_bean;
                         http_Handler.sendMessage(message);
+
                     }
 
 
+                } else {
+                    message.arg1 = http_Handler.HTTP_RECEIVE_FALSE;
+                    message.arg2 = http_Handler.HTTP_RECEIVE_ERROR_CODE_20002;
+                    http_Handler.sendMessage(message);
                 }
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
 
-        Log.d("test","message.obj = " + message.obj);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Log.d("test", "message.obj = " + message.obj);
 
 
     }

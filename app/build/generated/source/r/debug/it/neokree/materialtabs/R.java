@@ -361,8 +361,8 @@ public final class R {
 		public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f020030;
 		public static final int abc_textfield_search_default_mtrl_alpha = 0x7f020031;
 		public static final int abc_textfield_search_material = 0x7f020032;
-		public static final int left_arrow = 0x7f020078;
-		public static final int right_arrow = 0x7f02008c;
+		public static final int left_arrow = 0x7f02007e;
+		public static final int right_arrow = 0x7f020092;
 	}
 	public static final class id {
 		public static final int action_bar = 0x7f090059;
@@ -411,7 +411,7 @@ public final class R {
 		public static final int progress_circular = 0x7f090006;
 		public static final int progress_horizontal = 0x7f090007;
 		public static final int radio = 0x7f090053;
-		public static final int reveal = 0x7f0900a6;
+		public static final int reveal = 0x7f0900ab;
 		public static final int right = 0x7f09000d;
 		public static final int search_badge = 0x7f09005d;
 		public static final int search_bar = 0x7f09005c;
@@ -423,7 +423,7 @@ public final class R {
 		public static final int search_plate = 0x7f090061;
 		public static final int search_src_text = 0x7f090062;
 		public static final int search_voice_btn = 0x7f090066;
-		public static final int selector = 0x7f0900a8;
+		public static final int selector = 0x7f0900ad;
 		public static final int shortcut = 0x7f090052;
 		public static final int showCustom = 0x7f090014;
 		public static final int showHome = 0x7f090015;
@@ -431,7 +431,7 @@ public final class R {
 		public static final int split_action_bar = 0x7f090009;
 		public static final int submit_area = 0x7f090064;
 		public static final int tabMode = 0x7f090010;
-		public static final int text = 0x7f0900a7;
+		public static final int text = 0x7f0900ac;
 		public static final int title = 0x7f09004f;
 		public static final int up = 0x7f09000a;
 		public static final int useLogo = 0x7f090017;
@@ -470,9 +470,9 @@ public final class R {
 		public static final int abc_simple_dropdown_hint = 0x7f030016;
 		public static final int material_tab = 0x7f030022;
 		public static final int material_tab_icon = 0x7f030023;
-		public static final int support_simple_spinner_dropdown_item = 0x7f03002b;
-		public static final int tab = 0x7f03002c;
-		public static final int tab_icon = 0x7f03002d;
+		public static final int support_simple_spinner_dropdown_item = 0x7f03002c;
+		public static final int tab = 0x7f03002d;
+		public static final int tab_icon = 0x7f03002e;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f0b0000;
